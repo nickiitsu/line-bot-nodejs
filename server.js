@@ -6,6 +6,9 @@ var linebot = require('linebot')
 var env = require('dotenv').config({ path: __dirname + '/.env' })
 /*eslint-enable */
 app.use(bodyParser.json())
+app.set('port', (process.env.PORT || 4000))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
@@ -14,7 +17,7 @@ const bot = linebot({
 })
 
 const linebotParser = bot.parser()
-app.post('/linewebhook', linebotParser)
+app.post('/webhook', linebotParser)
 
 bot.on('message', function (event) {
   event.reply(event.message.text).then(function (data) {
@@ -23,11 +26,6 @@ bot.on('message', function (event) {
     console.log('Error', error)
   })
 })
-
-
-app.set('port', (process.env.PORT || 4000))
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
