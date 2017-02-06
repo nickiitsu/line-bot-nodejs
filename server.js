@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.post('/webhook', function (req, res) {
+  console.log('webhook function')
+  console.log('req :::::::::::', req)
   res.send('connection complete')
 })
 
