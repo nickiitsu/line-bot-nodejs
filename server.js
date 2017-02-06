@@ -16,13 +16,12 @@ const bot = linebot({
 })
 
 app.post('/webhook', function (req, res) {
-  console.log('req :::::::::::', req.body)
-  console.log('text :::: send form User :::', req.body.event.message.text)
+  console.log('req :::::::::::', req.body.events)
+  console.log('text :::: send form User :::', req.body.events.message.text)
   res.sendStatus(200)
 })
 
 bot.on('message', function (event) {
-  console.log('event::::', event)
   event.reply(event.message.text).then(function (data) {
     console.log('Success', data)
   }).catch(function (error) {
