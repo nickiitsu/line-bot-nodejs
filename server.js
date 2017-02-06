@@ -1,19 +1,20 @@
-var app = require('express')()
-// var bodyParser = require('body-parser')
-var LINEBot = require('line-messaging')
-/*eslint-disable */
-var env = require('dotenv').config({ path: __dirname + '/.env' })
-/*eslint-enable */
+var express = require('express')
+var bodyParser = require('body-parser')
+var app = express()
+var cors = require('cors')
+
+app.use(cors())
+app.use(bodyParser.json())
+
 app.set('port', (process.env.PORT || 4000))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
-var bot = LINEBot.create({
-  channelID: '<your channel ID>',
-  channelSecret: '<your channel secret>',
-  channelToken: '<your channel token>'
+app.get('/webhook', function (req, res) {
+  console.log(req.query)
+  res.send('data test')
 })
-app.use(bot.webhook('/webhook'))
 
-// bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {})
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
 })
