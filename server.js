@@ -16,7 +16,8 @@ const bot = linebot({
 })
 
 app.post('/webhook', function (req, res) {
-  console.log('req :::::::::::', req.body.events[0])
+  console.log('req :::::::::::', req.body.events[0].message)
+  console.log('sender source ::::', req.body.events[0].source.userId)
   // console.log('text :::: send form User :::', req.body.events.message.text)
   res.sendStatus(200)
 })
