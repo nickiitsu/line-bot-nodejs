@@ -9,8 +9,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.post('/webhook', function (req, res) {
-  // console.log(req.query)
-  res.send(req.query)
+  res.send('connection complete')
 })
 
 app.listen(app.get('port'), function () {
