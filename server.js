@@ -33,7 +33,7 @@ var options = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer [' + process.env.CHANNEL_ACCESS_TOKEN + ']'
+    'Authorization': process.env.CHANNEL_ACCESS_TOKEN
   }
 }
 
