@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var request = require('request')
+// var request = require('request')
+var https = require('https')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -25,6 +26,17 @@ app.post('/webhook', function (req, res) {
   res.sendStatus(200)
 })
 
+var options = {
+  host: 'api.line.me',
+  // port: 443,
+  path: '/v2/bot/message/reply',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer' + process.env.CHANNEL_ACCESS_TOKEN
+  }
+}
+
 function sendTextMessege (sender, text, replyToken) {
   console.log('text ::: ', text, 'sender ::: ', sender)
   var data = {
@@ -36,18 +48,29 @@ function sendTextMessege (sender, text, replyToken) {
       }
     ]
   }
-  request({
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer [' + process.env.CHANNEL_ACCESS_TOKEN + ']'
-    },
-    url: 'https://api.line.me/v2/bot/message/reply',
-    method: 'POST',
-    body: data
-  }, function (err, res, body) {
-    if (err) console.log(err)
-    if (res) console.log(res)
+  let rplyJson = JSON.stringify(data)
+  var request = https.request(options, function (response) {
+    console.log('Status: ' + response.statusCode)
+    console.log('Headers: ' + JSON.stringify(response.headers))
+    response.setEncoding('utf8')
   })
+  request.on('error', function (e) {
+    console.log('Request error: ' + e.message)
+  })
+  request.end(rplyJson)
+
+  // request({
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     Authorization: 'Bearer [' + process.env.CHANNEL_ACCESS_TOKEN + ']'
+  //   },
+  //   url: 'https://api.line.me/v2/bot/message/reply',
+  //   method: 'POST',
+  //   body: data
+  // }, function (err, res, body) {
+  //   if (err) console.log(err)
+  //   if (res) console.log(res)
+  // })
 }
 
 app.listen(app.get('port'), function () {
