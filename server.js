@@ -9,16 +9,15 @@ app.set('port', (process.env.PORT || 4000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.post('/webhook', function (req, res) {
-  console.log('webhook function')
-  console.log('req :::::::::::', req)
-  res.send('connection complete')
-})
-
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
   channelSecret: process.env.CHANNEL_SECRET,
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
+})
+
+app.post('/webhook', function (req, res) {
+  console.log('req :::::::::::', req.body)
+  res.sendStatus(200)
 })
 
 bot.on('message', function (event) {
