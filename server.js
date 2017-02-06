@@ -5,7 +5,7 @@ var LINEBot = require('line-messaging')
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
 /*eslint-enable */
-app.set('port', (process.env.PORT || 4000))
+// app.set('port', (process.env.PORT || 4000))
 
 var bot = LINEBot.create({
   channelID: '<your channel ID>',
@@ -15,7 +15,7 @@ var bot = LINEBot.create({
 app.use(bot.webhook('/webhook'))
 
 // bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {})
-
-app.listen(app.get('port'), function () {
-  console.log('run at port', app.get('port'))
-})
+server.listen(8080)
+// app.listen(app.get('port'), function () {
+//   console.log('run at port', app.get('port'))
+// })
