@@ -6,9 +6,6 @@ var linebot = require('linebot')
 var env = require('dotenv').config({ path: __dirname + '/.env' })
 /*eslint-enable */
 app.set('port', (process.env.PORT || 4000))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
 
 const parser = bodyParser.json({
   verify: function (req, res, buf, encoding) {
