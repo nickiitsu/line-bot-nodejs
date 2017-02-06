@@ -1,31 +1,20 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var app = express()
-var linebot = require('linebot')
+var app = require('express')()
+var server = require('http').Server(app)
+// var bodyParser = require('body-parser')
+var LINEBot = require('line-messaging')
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
 /*eslint-enable */
 app.set('port', (process.env.PORT || 4000))
 
-const parser = bodyParser.json({
-  verify: function (req, res, buf, encoding) {
-    req.rawBody = buf.toString(encoding)
-  }
-})
+var bot = LINEBot.create({
+  channelID: '<your channel ID>',
+  channelSecret: '<your channel secret>',
+  channelToken: '<your channel token>'
+}, server)
+app.use(bot.webhook('/webhook'))
 
-const bot = linebot({
-  channelId: process.env.CHANNEL_ID,
-  channelSecret: process.env.CHANNEL_SECRET,
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
-})
-
-app.post('/webhook', parser, function (req, res) {
-  if (!bot.verify(req.rawBody, req.get('X-Line-Signature'))) {
-    return res.sendStatus(400)
-  }
-  bot.parse(req.body)
-  return res.json({})
-})
+// bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {})
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
