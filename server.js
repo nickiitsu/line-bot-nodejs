@@ -13,6 +13,11 @@ app.get('/webhook', function (req, res) {
   res.send('data test')
 })
 
+app.post('/webhook', function (req, res) {
+  console.log(req.query)
+  res.send('data test')
+})
+
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
 })
