@@ -26,6 +26,7 @@ app.post('/webhook', function (req, res) {
 })
 
 function sendTextMessege (sender, text, replyToken) {
+  console.log('text ::: ', text, 'sender ::: ', sender)
   var data = {
     replyToken: replyToken,
     messages: [
