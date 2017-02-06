@@ -38,7 +38,8 @@ function sendTextMessege (sender, text, replyToken) {
   }
   request({
     headers: {
-      Authorization: 'Bearer{' + process.env.CHANNEL_ACCESS_TOKEN + '}'
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer [' + process.env.CHANNEL_ACCESS_TOKEN + ']'
     },
     url: 'https://api.line.me/v2/bot/message/reply',
     method: 'POST',
