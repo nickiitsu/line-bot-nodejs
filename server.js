@@ -25,7 +25,7 @@ app.post('/webhook', function (req, res) {
   var sender = req.body.events[0].source.userId
   var replyToken = req.body.events[0].replyToken
   console.log(text, sender, replyToken)
-  client.sendText('<target mid>', 'สวัสดีค่ะ', 'Message')
+  client.sendText(sender, 'สวัสดีค่ะ')
   res.sendStatus(200)
 })
 
