@@ -19,29 +19,27 @@ app.post('/webhook', (req, res) => {
   console.log(text, sender, replyToken)
   // console.log(req.body.events[0])
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
-    replyMessage(sender, text)
+    setTimeout(() => {
+      replyMessage(sender, text)
+    }, 2000)
   }
   res.sendStatus(200)
 })
 
 function replyMessage (sender, text) {
   let data = {
-    to: sender,
-    messages: [
+    'to': sender,
+    'messages': [
       {
         type: 'text',
         text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞'
-      },
-      {
-        type: 'text',
-        text: text
       }
     ]
   }
   request({
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
+      'Authorization': 'Bearer 7yMBSam/XdTxgnlfITWcgqQj5zmbH1D4CbPS4L+BKxWIhrpk5CjcVe4fF6eoPCIms9ToiNoX82LF6rWfHMMM9yPTHfPQhFdJjecjjbmr2RB0rlouvMTx2YNez1uDi70RzmM+aosR36Z8DLOLSk3wtwdB04t89/1O/w1cDnyilFU='
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
