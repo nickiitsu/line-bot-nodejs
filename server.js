@@ -17,7 +17,7 @@ app.post('/webhook', (req, res) => {
   var sender = req.body.events[0].source.userId
   var replyToken = req.body.events[0].replyToken
   console.log(text, sender, replyToken)
-  console.log(req.body.events[0])
+  // console.log(req.body.events[0])
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
     replyMessage(sender, text)
   }
@@ -41,9 +41,9 @@ function replyMessage (sender, text) {
   request({
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
+      'Authorization': process.env.TOKEN
     },
-    url: 'https://api.line.me/v2/bot/message/reply',
+    url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
     json: data
   }, function (err, res, body) {
