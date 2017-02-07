@@ -25,32 +25,22 @@ const client = new LineBot({
   channelSecret: process.env.CHANNEL_SECRET
 })
 
-app.post('/webhook', bodyParser.json({ verify: (req, res, buf) => req.rawBody = buf }), (req, res) => {
+var message = {
+  type: 'text',
+  text: ''
+}
+app.post('/webhook', (req, res) => {
   var text = req.body.events[0].message.text
   var sender = req.body.events[0].source.userId
   var replyToken = req.body.events[0].replyToken
   console.log(text, sender, replyToken)
-  // reply
-  const eventJson = JSON.parse(req.rawBody)
-  eventJson.events.forEach(event => {
-    switch (event.type) {
-      case 'message':
-        switch (event.message.type) {
-          case 'text':
-            const message = {
-              type: 'text',
-              text: event.message.text
-            }
-            client.replyMessage(event.replyToken, message).then((response) => { console.log(response) })
-          .catch((response) => {
-            console.log(response.body)
-            console.log(response.status)
-          })
-            break
-        }
-        break
-    }
+  message.text = text
+  client.replyMessage(replyToken, message).then((response) => { console.log(response) })
+  .catch((response) => {
+    console.log(response.body)
+    console.log(response.status)
   })
+
   res.sendStatus(200)
 })
 
