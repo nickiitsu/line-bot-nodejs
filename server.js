@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
+var http = require('http')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -37,10 +38,8 @@ function sendText (sender, text) {
   }
   request({
     headers: {
-      'Content-Type': 'application/json'
-    },
-    'auth': {
-      'bearer': process.env.CHANNEL_ACCESS_TOKEN
+      'Content-Type': 'application/json',
+      'Authorization': process.env.TOKEN
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
@@ -50,6 +49,22 @@ function sendText (sender, text) {
     if (err) console.log('error')
     if (res) console.log('success')
     if (body) console.log(body)
+  })
+
+  var options = {
+    host: 'https://api.line.me',
+    path: '/v2/bot/message/push',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
+    }
+  }
+
+  var req = http.request(options, function (get) {
+    get.on("data", function (data) {
+      console.log(data)
+    })
   })
 }
 
