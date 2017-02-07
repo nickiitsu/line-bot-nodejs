@@ -9,7 +9,7 @@ var env = require('dotenv').config({ path: __dirname + '/.env' })
 app.use(bodyParser.json())
 
 app.set('port', (process.env.PORT || 4000))
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 app.post('/webhook', (req, res) => {
@@ -31,7 +31,7 @@ function replyMessage (sender, text) {
     'messages': [
       {
         type: 'text',
-        text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞'
+        text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞' + text
       }
     ]
   }
@@ -42,7 +42,7 @@ function replyMessage (sender, text) {
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
-    data: data
+    body: JSON.stringify(data)
   }, function (err, res, body) {
     if (err) console.log('error')
     if (res) console.log('success')
