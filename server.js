@@ -42,7 +42,7 @@ function pushMessage (sender, text, replyToken) {
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
-    body: JSON.stringify(data)
+    json: JSON.stringify(data)
   }, function (err, res, body) {
     if (err) console.log('error')
     if (res) console.log('success')
