@@ -17,6 +17,7 @@ app.post('/webhook', (req, res) => {
   var sender = req.body.events[0].source.userId
   var replyToken = req.body.events[0].replyToken
   console.log(text, sender, replyToken)
+  console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
     replyMessage(sender, text)
@@ -41,7 +42,7 @@ function replyMessage (sender, text) {
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
-    json: data
+    data: data
   }, function (err, res, body) {
     if (err) console.log('error')
     if (res) console.log('success')
