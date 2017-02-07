@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
+// var axios = require('axios')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -9,8 +10,8 @@ var env = require('dotenv').config({ path: __dirname + '/.env' })
 app.use(bodyParser.json())
 
 app.set('port', (process.env.PORT || 4000))
-app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.post('/webhook', (req, res) => {
   var text = req.body.events[0].message.text
@@ -26,26 +27,27 @@ app.post('/webhook', (req, res) => {
 })
 
 function pushMessage (sender, text, replyToken) {
-  var data = {
-    'to': sender,
-    'messages': [
+  const data = {
+    to: sender,
+    messages: [
       {
         type: 'text',
         text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞' + text
       }
     ]
   }
-  request({
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': process.env.TOKEN
-    },
-    url: 'https://api.line.me/v2/bot/message/push',
+  const options = {
     method: 'POST',
-    json: JSON.stringify(data)
-  }, function (err, res, body) {
-    if (err) console.log('error')
-    if (res) console.log('success')
+    uri: 'https://api.line.me/v2/bot/message/push',
+    body: data,
+    json: true,
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
+    }
+  }
+  request(options).then(function (response) {
+    console.log('success')
   })
 }
 
