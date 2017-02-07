@@ -20,19 +20,18 @@ app.post('/webhook', (req, res) => {
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
-    // replyMessage(sender, text)
-    replyMessage(sender, text, replyToken)
+    pushMessage(sender, text, replyToken)
   }
   res.sendStatus(200)
 })
 
-function replyMessage (sender, text, replyToken) {
+function pushMessage (sender, text, replyToken) {
   var data = {
-    replyToken: replyToken,
-    messages: [
+    'to': sender,
+    'messages': [
       {
         type: 'text',
-        text: text + ' from user'
+        text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞' + text
       }
     ]
   }
@@ -41,38 +40,14 @@ function replyMessage (sender, text, replyToken) {
       'Content-Type': 'application/json',
       'Authorization': process.env.TOKEN
     },
-    url: 'https://api.line.me/v2/bot/message/reply',
+    url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
-    body: JSON.stringify(data)
+    body: data
   }, function (err, res, body) {
     if (err) console.log('error')
     if (res) console.log('success')
   })
 }
-
-// function replyMessage (sender, text) {
-//   var data = {
-//     'to': sender,
-//     'messages': [
-//       {
-//         type: 'text',
-//         text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞' + text
-//       }
-//     ]
-//   }
-//   request({
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization': process.env.TOKEN
-//     },
-//     url: 'https://api.line.me/v2/bot/message/push',
-//     method: 'POST',
-//     body: JSON.stringify(data)
-//   }, function (err, res, body) {
-//     if (err) console.log('error')
-//     if (res) console.log('success')
-//   })
-// }
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
