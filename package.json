@@ -14,6 +14,7 @@
     "https": "^1.0.0",
     "line-bot-api": "^0.0.3",
     "line-bot-sdk": "^0.1.4",
+    "node-line-messaging-api": "^0.11.1",
     "request": "^2.79.0"
   }
 }
