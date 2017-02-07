@@ -1,7 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
-var http = require('http')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -28,8 +27,8 @@ app.post('/webhook', (req, res) => {
 
 function sendText (sender, text) {
   let data = {
-    'to': sender,
-    'messages': [
+    to: sender,
+    messages: [
       {
         type: 'text',
         text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞'
@@ -49,22 +48,6 @@ function sendText (sender, text) {
     if (err) console.log('error')
     if (res) console.log('success')
     if (body) console.log(body)
-  })
-
-  var options = {
-    host: 'https://api.line.me',
-    path: '/v2/bot/message/push',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
-    }
-  }
-
-  var req = http.request(options, function (get) {
-    get.on("data", function (data) {
-      console.log(data)
-    })
   })
 }
 
