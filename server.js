@@ -19,9 +19,7 @@ app.post('/webhook', (req, res) => {
   console.log(text, sender, replyToken)
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
-  if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
-    pushMessage(sender, text, replyToken)
-  }
+  pushMessage(sender, text, replyToken)
   res.sendStatus(200)
 })
 
@@ -42,7 +40,7 @@ function pushMessage (sender, text, replyToken) {
     json: true,
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
-      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
+      'Authorization': process.env.TOKEN
     }
   }
 
