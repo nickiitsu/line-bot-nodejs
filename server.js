@@ -1,7 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
-// var axios = require('axios')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -27,7 +26,7 @@ app.post('/webhook', (req, res) => {
 })
 
 function pushMessage (sender, text, replyToken) {
-  const data = {
+  var data = {
     to: sender,
     messages: [
       {
@@ -36,7 +35,7 @@ function pushMessage (sender, text, replyToken) {
       }
     ]
   }
-  const options = {
+  var options = {
     method: 'POST',
     uri: 'https://api.line.me/v2/bot/message/push',
     body: data,
@@ -46,8 +45,11 @@ function pushMessage (sender, text, replyToken) {
       'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
     }
   }
-  request(options).then(function (response) {
-    console.log('success')
+
+  request(options, function (err, res, body) {
+    if (err) console.log('error')
+    if (res) console.log('success')
+    if (body) console.log(body)
   })
 }
 
