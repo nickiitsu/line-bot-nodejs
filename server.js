@@ -1,7 +1,8 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var request = require('request')
+// var request = require('request')
 // var https = require('https')
+var LineBot = require('line-bot-sdk')
 var app = express()
 /*eslint-disable */
 var env = require('dotenv').config({ path: __dirname + '/.env' })
@@ -13,68 +14,20 @@ app.set('port', (process.env.PORT || 4000))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
+var client = LineBot.client({
+  channelID: process.env.CHANNEL_ID,
+  channelSecret: process.env.CHANNEL_SECRET,
+  channelToken: process.env.CHANNEL_ACCESS_TOKEN
+})
+
 app.post('/webhook', function (req, res) {
-  // console.log('show reply token :::::', req.body.events[0].replyToken)
-  // console.log('send from userId :::::::::::', req.body.events[0].message.text)
-  // console.log('sender source ::::', req.body.events[0].source.userId)
   var text = req.body.events[0].message.text
   var sender = req.body.events[0].source.userId
   var replyToken = req.body.events[0].replyToken
-  if (text === 'สวัสดี') {
-    sendTextMessege(sender, text, replyToken)
-  }
+  console.log(text, sender, replyToken)
+  client.sendText(replyToken, 'สวัสดีค่ะ', 'Message')
   res.sendStatus(200)
 })
-
-// var options = {
-//   host: 'api.line.me',
-//   // port: 443,
-//   path: '/v2/bot/message/reply',
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
-//   }
-// }
-var auth = 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
-console.log(auth)
-
-function sendTextMessege (sender, text, replyToken) {
-  console.log('text ::: ', text, 'sender ::: ', sender)
-  var data = {
-    replyToken: replyToken,
-    messages: [
-      {
-        type: 'text',
-        text: 'เราชื่อหนูหนค่ะ พี่เเต๊กสุดหล่อ'
-      }
-    ]
-  }
-  // let rplyJson = JSON.stringify(data)
-  // var request = https.request(options, function (response) {
-  //   console.log('Status: ' + response.statusCode)
-  //   console.log('Headers: ' + JSON.stringify(response.headers))
-  //   response.setEncoding('utf8')
-  // })
-  // request.on('error', function (e) {
-  //   console.log('Request error: ' + e.message)
-  // })
-  // request.end(rplyJson)
-
-  request({
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': auth
-    },
-    url: 'https://api.line.me/v2/bot/message/reply',
-    method: 'POST',
-    json: true,
-    body: data
-  }, function (err, res, body) {
-    if (err) console.log(err)
-    if (res) console.log(res)
-  })
-}
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
