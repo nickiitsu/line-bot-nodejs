@@ -41,14 +41,14 @@ function replyMessage (sender, text) {
   request({
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': process.env.TOKEN
+      'Authorization': 'Bearer ' + process.env.CHANNEL_ACCESS_TOKEN
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
     json: data
   }, function (err, res, body) {
-    if (err) console.log(err)
-    if (res) console.log(res)
+    if (err) console.log('error')
+    if (res) console.log('success')
   })
 }
 
