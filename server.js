@@ -19,7 +19,7 @@ app.post('/webhook', (req, res) => {
   console.log(text, sender, replyToken)
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
-  if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
+  if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
     sendText(sender, text)
   }
   res.sendStatus(200)
@@ -32,6 +32,10 @@ function sendText (sender, text) {
       {
         type: 'text',
         text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿'
+      },
+      {
+        "type":"text",
+        "text":"ธาราปลากัด ยินดีต้อนรับ..."
       }
     ]
   }
