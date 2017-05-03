@@ -31,14 +31,14 @@ function sendText (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'สวัสดีค่ะ เราเป็นผู้ช่วยปรึกษาด้านความรัก สำหรับหมามิ้น 💞'
+        text: 'สวัสดี 💞'
       }
     ]
   }
   request({
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer qs8fKYnmiSfdWYcQwJnJENMtqrZKswlJoBSKg2ka6a1BNlphgNQ9LAQjT9+tSvsts9ToiNoX82LF6rWfHMMM9yPTHfPQhFdJjecjjbmr2RBRatGFsVgkDhITHsO4TD2x98ybbmRWcuNXv9/fNuDHJAdB04t89/1O/w1cDnyilFU='
+      'Authorization': 'Bearer +zZRwehzcl2nnalC+aAVyrF4SSIaZBfR3NWuhjnkiauU5LV24oQcqQfyO5DSHe//A1br67NIP2wGE9eoe4VEDeWANsUDa5iN3VJ/cZK7fOinYmRYi40Wyte09bpRo4l4LBTGTCoIYXDmDipie0lSiAdB04t89/1O/w1cDnyilFU='
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
