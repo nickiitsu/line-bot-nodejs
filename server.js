@@ -31,7 +31,7 @@ function sendText (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'สวัสดี 💞'
+        text: 'สวัสดีครับผม 💞'
       }
     ]
   }
