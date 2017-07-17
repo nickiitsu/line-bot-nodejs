@@ -37,7 +37,12 @@ function sendText (sender, text) {
       {
         "type":"text",
         "text":"ธาราปลากัด ยินดีต้อนรับ...i"
-      }
+      },
+         {
+    "type": "image",
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/staff.png",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/staff.png"
+},
       
     ]
   }
