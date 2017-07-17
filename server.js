@@ -24,12 +24,17 @@ app.post('/webhook', (req, res) => {
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
   var  text='สวัสดีครับผม 􀄃􀄭shiny􏿿';
   var  text2='ยินดีต้อนรับ..'; 
-    sendText(sender, text,text2)
+    var txt1=  {
+    "type": "image",
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
+};
+    sendText(sender, text,text2,txt1)
   }
   res.sendStatus(200)
 })
 
-function sendText (sender, text,text2) {
+function sendText (sender, text,text2,txt1) {
   let data = {
     to: sender,
     messages: [
@@ -42,11 +47,7 @@ function sendText (sender, text,text2) {
         "type":"text",
         "text":text2
       },
-         {
-    "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
-},
+       txt1
       
     ]
   }
