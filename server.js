@@ -24,26 +24,21 @@ app.post('/webhook', (req, res) => {
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
   var  text1={
         type: 'text',
-        text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿ssss'
-      };
+        text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿ssss สอบถามกันได้เลยครับ โดยพิมพ์คำถาม เช่น'
+      }; 
   var  text2={
-        "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ.ggggggggggg"
-      };
-    var text3=  {
-    "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
-};
+        type: 'text',
+        text: 'เวรโอที/โอที/OT/เวรวันปกติ'
+      }; 
   }
-  if (text === '55') {
+  if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
   var  text1={
         type: 'text',
-        text: '555ssss'
+        text: 'โย่ว'
       };
   var  text2={
         "type":"text",
-        "text":"55ggggggggggg"
+        "text":'เวรโอทีเดือนนี้'
       };
     var text3=  {
     "type": "image",
