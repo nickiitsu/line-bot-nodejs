@@ -19,6 +19,8 @@ app.post('/webhook', (req, res) => {
   console.log(text, sender, replyToken)
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
+  if (text != '') {
+    
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
     sendText(sender, text)
   }
@@ -36,7 +38,7 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...j"
+        "text":"ธาราปลากัด ยินดีต้อนรับ..lj"
       },
          {
     "type": "image",
@@ -46,6 +48,8 @@ function sendText (sender, text) {
       
     ]
   }
+  }  
+  
   request({
     headers: {
       'Content-Type': 'application/json',
