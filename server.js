@@ -23,7 +23,7 @@ app.post('/webhook', (req, res) => {
     
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
   $text = 
-      '{
+      {
         "type":"text",
         "text":"ธาราปลากัด ยินดีต้อนรับ.ggggggggggg"
       },
@@ -31,7 +31,7 @@ app.post('/webhook', (req, res) => {
     "type": "image",
     "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
-}'
+}
     sendText(sender, $text)
   }
   res.sendStatus(200)
