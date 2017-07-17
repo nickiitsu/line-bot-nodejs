@@ -35,7 +35,7 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...55"
+        "text":"ธาราปลากัด ยินดีต้อนรับ...111"
       },
       {
   "type": "imagemap",
@@ -48,7 +48,7 @@ function sendText (sender, text) {
   "actions": [
       {
           "type": "uri",
-          "linkUri": "https://example.com/",
+          "linkUri": "https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/static",
           "area": {
               "x": 0,
               "y": 0,
