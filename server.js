@@ -35,20 +35,20 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...747"
+        "text":"ธาราปลากัด ยินดีต้อนรับ...uu"
       },
       {
   "type": "imagemap",
-  "baseUrl": "https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/static/rich/1040",
+  "baseUrl": "https://github.com/line/line-bot-sdk-go/tree/master/examples/kitchensink/static/rich",
   "altText": "this is an imagemap",
   "baseSize": {
-      "height": 1040,
-      "width": 1040
+      "height": 700,
+      "width": 700
   },
   "actions": [
       {
           "type": "uri",
-          "linkUri": "https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/static",
+          "linkUri": "https://www.skru.ac.th",
           "area": {
               "x": 0,
               "y": 0,
