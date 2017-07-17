@@ -40,7 +40,15 @@ function sendText (sender, text) {
       {
         "type":"text",
         "text":"http://www.skru.ac.th/images/mini9.jpg"
-      }
+      },
+      {
+  "type": "imagemap",
+  "baseUrl": "http://www.skru.ac.th/images/mini9.jpg",
+  "altText": "this is an imagemap",
+  "baseSize": {
+      "height": 1040,
+      "width": 1040
+  },
     ]
   }
   request({
