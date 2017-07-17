@@ -39,7 +39,7 @@ function sendText (sender, text) {
       },
       {
   "type": "imagemap",
-  "baseUrl": " https://dev-chat.on.lk/Content/image/show/",
+  "baseUrl": "https://dev-chat.on.lk/Content/image/show",
   "altText": "รูปปป",
   "baseSize": {
       "height": 1040,
