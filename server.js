@@ -24,15 +24,15 @@ app.post('/webhook', (req, res) => {
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
   var  text1={
         type: 'text',
-        text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿ssss สอบถามกันได้เลยครับ โดยพิมพ์คำถาม เช่น'
+        text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿 สอบถามกันได้เลยครับ เช่น'
       }; 
   var  text2={
         type: 'text',
-        text: 'เวรโอที/โอที/OT/เวรวันปกติ'
+        text: 'ดูเวรวันปกติ พิมพ์ >> เวรโอที/โอที/OT/เวรวันปกติ'
       }; 
   var  text3={
         type: 'text',
-        text: 'กษบป./เวรเสาร์อาทิตย์/กษบป/เวรวันหยุด'
+        text: 'ดูเวรวันหยุด พิมพ์ >> กษบป./เวรเสาร์อาทิตย์/กษบป/เวรวันหยุด'
       }; 
   }
   if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
@@ -49,6 +49,20 @@ app.post('/webhook', (req, res) => {
     "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
 };  
+if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
+  var  text1={
+        type: 'text',
+        text: 'โย่ว'
+      };
+  var  text2={
+        "type":"text",
+        "text":'เวร กษบป.เดือนนี้'
+      };
+    var text3=  {
+    "type": "image",
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p2.jpg",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p2.jpg"
+}; 
   }  
  sendText(sender, text1,text2,text3)
   res.sendStatus(200)
