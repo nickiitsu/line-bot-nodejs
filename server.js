@@ -30,6 +30,11 @@ function sendText (sender, text) {
     to: sender,
     messages: [
       {
+    "type": "image",
+    "originalContentUrl": "http://www.skru.ac.th/th/assets/l1.jpg",
+    "previewImageUrl": "http://www.skru.ac.th/th/assets/p1.jpg"
+},
+      {
         type: 'text',
         text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿'
       },
