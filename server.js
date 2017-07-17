@@ -48,7 +48,7 @@ function sendText (sender, text) {
   "baseSize": {
       "height": 1040,
       "width": 1040
-  },
+  }
     ]
   }
   request({
