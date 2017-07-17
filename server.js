@@ -40,7 +40,7 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ..lj"
+        "text":"ธาราปลากัด ยินดีต้อนรับ..8888"
       },
          {
     "type": "image",
