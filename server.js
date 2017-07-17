@@ -67,11 +67,7 @@ function sendText (sender, text) {
           }
       }
   ]
-},
-      {    "type": "image",
-    "originalContentUrl": "http://www.skru.ac.th/images/mini9.jpg",
-    "previewImageUrl": "http://www.skru.ac.th/images/mini9.jpg"
-      }
+}
       
     ]
   }
