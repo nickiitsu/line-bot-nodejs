@@ -43,11 +43,11 @@ function sendText (sender, text) {
       },
       {
   "type": "imagemap",
-  "baseUrl": "http://www.skru.ac.th/images/mini9.jpg",
+  "baseUrl": "https://i1.24x7th.com/df/0/ui/post/2017/06/28/7/b/586b3bcd-865e-4a7f-9f4b-5e01d672a68a",
   "altText": "this is an imagemap",
   "baseSize": {
-      "height": 1040,
-      "width": 1040
+      "height": 480,
+      "width": 640
   }
     ]
   }
