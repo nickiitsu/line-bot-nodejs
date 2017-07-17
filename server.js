@@ -40,7 +40,7 @@ function sendText (sender, text) {
       },
          {
     "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/l1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
 },
       
