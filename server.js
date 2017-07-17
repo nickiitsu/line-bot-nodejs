@@ -30,6 +30,10 @@ app.post('/webhook', (req, res) => {
         type: 'text',
         text: 'เวรโอที/โอที/OT/เวรวันปกติ'
       }; 
+  var  text3={
+        type: 'text',
+        text: 'กษบป./เวรเสาร์อาทิตย์/กษบป/เวรวันหยุด'
+      }; 
   }
   if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
   var  text1={
