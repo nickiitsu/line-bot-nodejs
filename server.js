@@ -40,39 +40,8 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...jjj"
-      },
-      {
-  "type": "imagemap",
-  "baseUrl": "https://github.com/line/line-bot-sdk-go/tree/master/examples/kitchensink/static/rich",
-  "altText": "รูปปป",
-  "baseSize": {
-      "height": 1040,
-      "width": 1040
-  },
-  "actions": [
-      {
-          "type": "uri",
-          "linkUri": "https://www.skru.ac.th",
-          "area": {
-              "x": 0,
-              "y": 0,
-              "width": 520,
-              "height": 1040
-          }
-      },
-      {
-          "type": "message",
-          "text": "hello",
-          "area": {
-              "x": 520,
-              "y": 0,
-              "width": 520,
-              "height": 1040
-          }
+        "text":"ธาราปลากัด ยินดีต้อนรับ...i"
       }
-  ]
-}
       
     ]
   }
