@@ -42,8 +42,8 @@ function sendText (sender, text) {
   "baseUrl": "https://github.com/line/line-bot-sdk-go/tree/master/examples/kitchensink/static/rich",
   "altText": "this is an imagemap",
   "baseSize": {
-      "height": 700,
-      "width": 700
+      "height": 1040,
+      "width": 1040
   },
   "actions": [
       {
