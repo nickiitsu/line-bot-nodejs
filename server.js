@@ -23,13 +23,13 @@ app.post('/webhook', (req, res) => {
     
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
   var  text='สวัสดีครับผม 􀄃􀄭shiny􏿿';
-    
-    sendText(sender, text)
+  var  text2='ยินดีต้อนรับ..'; 
+    sendText(sender, text,text2)
   }
   res.sendStatus(200)
 })
 
-function sendText (sender, text) {
+function sendText (sender, text,text2) {
   let data = {
     to: sender,
     messages: [
@@ -40,7 +40,7 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ..8888"
+        "text":text2
       },
          {
     "type": "image",
