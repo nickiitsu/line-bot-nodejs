@@ -35,7 +35,11 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...http://www.skru.ac.th/images/mini9.jpg"
+        "text":"ธาราปลากัด ยินดีต้อนรับ..."
+      },
+      {
+        "type":"text",
+        "text":"http://www.skru.ac.th/images/mini9.jpg"
       }
     ]
   }
