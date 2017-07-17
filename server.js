@@ -35,11 +35,11 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ...เเ"
+        "text":"ธาราปลากัด ยินดีต้อนรับ..."
       },
       {
   "type": "imagemap",
-  "baseUrl": "https://dev-chat.on.lk/Content/image/show",
+  "baseUrl": "https://github.com/line/line-bot-sdk-go/tree/master/examples/kitchensink/static/rich",
   "altText": "รูปปป",
   "baseSize": {
       "height": 1040,
