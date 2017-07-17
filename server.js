@@ -33,7 +33,7 @@ app.post('/webhook', (req, res) => {
 function sendText (sender, $text) {
   let data = {
     to: sender,
-    messages: $messages = [
+    messages:[
 				'type' => 'text',
 				'text' => $text
 				
