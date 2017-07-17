@@ -49,7 +49,7 @@ app.post('/webhook', (req, res) => {
     "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
 };  
-if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
+if (text === 'เวร กษบป'|| text === 'กษบป'|| text === 'เวรวันหยุด') {
   var  text1={
         type: 'text',
         text: 'โย่ว'
