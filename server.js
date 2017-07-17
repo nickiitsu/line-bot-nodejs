@@ -22,29 +22,30 @@ app.post('/webhook', (req, res) => {
 
     
   if (text === 'สวัสดี' || text === 'Hello' || text === 'hello' || text === 'ดี') {
-    sendText(sender, text)
-  }
-  res.sendStatus(200)
-})
-
-function sendText (sender, text) {
-  let data = {
-    to: sender,
-    messages: [
-   
-      {
+  $text ='{
         type: 'text',
         text: 'สวัสดีครับผม 􀄃􀄭shiny􏿿'
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ..lj"
+        "text":"ธาราปลากัด ยินดีต้อนรับ.ggggggggggg"
       },
          {
     "type": "image",
     "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
-},
+}'
+    sendText(sender, $text)
+  }
+  res.sendStatus(200)
+})
+
+function sendText (sender, $text) {
+  let data = {
+    to: sender,
+    messages: [
+   
+  $text
       
     ]
   }
