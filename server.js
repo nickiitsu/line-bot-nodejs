@@ -35,7 +35,7 @@ function sendText (sender, text) {
       },
       {
         "type":"text",
-        "text":"ธาราปลากัด ยินดีต้อนรับ..."
+        "text":"ธาราปลากัด ยินดีต้อนรับ...jjj"
       },
       {
   "type": "imagemap",
@@ -68,9 +68,10 @@ function sendText (sender, text) {
       }
   ]
 },
-       "type": "image",
+      {    "type": "image",
     "originalContentUrl": "http://www.skru.ac.th/images/mini9.jpg",
     "previewImageUrl": "http://www.skru.ac.th/images/mini9.jpg"
+      }
       
     ]
   }
