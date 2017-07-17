@@ -39,7 +39,7 @@ function sendText (sender, text) {
       },
       {
   "type": "imagemap",
-  "baseUrl": "https://i1.24x7th.com/df/0/ui/post/2017/06/28/7/b/586b3bcd-865e-4a7f-9f4b-5e01d672a68a",
+  "baseUrl": "https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/static/rich/1040",
   "altText": "this is an imagemap",
   "baseSize": {
       "height": 1040,
