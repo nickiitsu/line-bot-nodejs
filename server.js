@@ -35,8 +35,23 @@ app.post('/webhook', (req, res) => {
     "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
 };
-    sendText(sender, text1,text2,text3)
-  }
+    
+  if (text === '55') {
+  var  text1={
+        type: 'text',
+        text: '555ssss'
+      };
+  var  text2={
+        "type":"text",
+        "text":"55ggggggggggg"
+      };
+    var text3=  {
+    "type": "image",
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
+};  
+  }  
+ sendText(sender, text1,text2,text3)
   res.sendStatus(200)
 })
 
