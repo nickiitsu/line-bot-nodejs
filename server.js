@@ -50,14 +50,14 @@ app.post('/webhook', (req, res) => {
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
 };  
   }
-if (text === 'เวร กษบป'|| text === 'กษบป'|| text === 'เวรวันหยุด') {
+if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เวรวันหยุด') {
   var  text1={
         type: 'text',
         text: 'โย่ว'
       };
   var  text2={
         "type":"text",
-        "text":'เวร กษบป.เดือนนี้'
+        "text":'เวร กศบป.เดือนนี้'
       };
     var text3=  {
     "type": "image",
