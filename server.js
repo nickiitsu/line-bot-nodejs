@@ -46,8 +46,8 @@ app.post('/webhook', (req, res) => {
       };
     var text3=  {
     "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p1.jpg"
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
 };  
   }
 if (text === 'เวร กษบป'|| text === 'กษบป'|| text === 'เวรวันหยุด') {
@@ -61,8 +61,8 @@ if (text === 'เวร กษบป'|| text === 'กษบป'|| text === 'เ�
       };
     var text3=  {
     "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/image/p2.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/image/p2.jpg"
+    "originalContentUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
+    "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg"
 }; 
   }  
  sendText(sender, text1,text2,text3)
