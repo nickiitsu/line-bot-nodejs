@@ -38,7 +38,7 @@ app.post('/webhook', (req, res) => {
   if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
   var  text1={
         type: 'text',
-        text: 'โย่ว'
+        text: 'โย่ว...'
       };
   var  text2={
         type:'text',
@@ -53,16 +53,16 @@ app.post('/webhook', (req, res) => {
 if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เวรวันหยุด' || text === 'กศบป.') {
   var  text1={
         type: 'text',
-        text: 'โย่ว'
+        text: 'โย่ว...'
       };
   var  text2={
         "type":"text",
         "text":'เวร กศบป.เดือนนี้'
       };
     var text3=  {
-    "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg"
+    type: 'image',
+    originalContentUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg',
+    previewImageUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg'
 }; 
   }  
  sendText(sender, text1,text2,text3)
