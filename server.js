@@ -49,7 +49,7 @@ app.post('/webhook', (req, res) => {
   "altText": "this is a buttons template",
   "template": {
       "type": "buttons",
-      "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
+      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
       "title": "Menu",
       "text": "Please select",
       "actions": [
