@@ -88,7 +88,7 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
   }
 }
  
-}; 
+
   }  
  sendText(sender, text1,text2,text3)
   res.sendStatus(200)
