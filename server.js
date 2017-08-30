@@ -49,19 +49,18 @@ app.post('/webhook', (req, res) => {
   "altText": "this is a buttons template",
   "template": {
       "type": "buttons",
-      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
-      "title": "Menu",
-      "text": "Please select",
+      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
+      "title": "เวรโอที",     
       "actions": [
           {
-            "type": "postback",
+            "type": "uri",
             "label": "ดู PDF",
             "data": "https://passport.skru.ac.th/evaluate/manual/manual_staff_ver.1.pdf"
           },        
           {
             "type": "uri",
-            "label": "ดูรูป",
-            "uri": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg"
+            "label": "ดู รูป",
+            "uri": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
           }
       ]
   }
