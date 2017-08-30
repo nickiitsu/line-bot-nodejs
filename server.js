@@ -72,12 +72,25 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
         "type":"text",
         "text":'เวร กศบป.เดือนนี้'
       };
-    var text3=  {
-    type: 'image',
-    originalContentUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg',
-    previewImageUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg'
-}; 
-  }  
+    var text3= {
+  "type": "template",
+  "altText": "ตารางเวร กศบป",
+  "template": {
+      "type": "buttons",
+     
+      "title": "เวร กศบป",  
+      "text": "ตรวจสอบตารางการปฏิบัติงานนอกเวลาราชการ วันเสาร์ - อาทิตย์",
+      "actions": [
+                
+          {
+            "type": "uri",
+            "label": "ดู รูป",
+            "uri": "http://eduroam.skru.ac.th/SKRU_Line_Bot/server/php/files/p2.jpg"
+          }
+      ]
+  }
+};
+  }
  sendText(sender, text1,text2,text3)
   res.sendStatus(200)
 })
