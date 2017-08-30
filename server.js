@@ -53,11 +53,7 @@ app.post('/webhook', (req, res) => {
       "title": "เวรโอที",  
       "text": "ตรวจสอบตารางการปฏิบัติงานนอกเวลาราชการ วันจันทร์ - ศุกร์",
       "actions": [
-          {
-            "type": "uri",
-            "label": "ดู PDF",
-            "data": "https://passport.skru.ac.th/evaluate/manual/manual_staff_ver.1.pdf"
-          },        
+                
           {
             "type": "uri",
             "label": "ดู รูป",
