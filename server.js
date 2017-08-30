@@ -41,13 +41,13 @@ app.post('/webhook', (req, res) => {
         text: 'โย่ว'
       };
   var  text2={
-        "type":"text",
-        "text":'เวรโอทีเดือนนี้'
+        type:'text',
+        text:'เวรโอทีเดือนนี้'
       };
     var text3=  {
-    "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
+    type: 'image',
+    originalContentUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg',
+    previewImageUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg'
 };  
   }
 if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เวรวันหยุด' || text === 'กศบป.') {
