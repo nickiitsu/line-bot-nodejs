@@ -49,7 +49,7 @@ app.post('/webhook', (req, res) => {
   "altText": "ตารางเวร OT",
   "template": {
       "type": "buttons",
-      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
+     
       "title": "เวรโอที",  
       "text": "ตรวจสอบตารางการปฏิบัติงานนอกเวลาราชการ วันจันทร์ - ศุกร์",
       "actions": [
@@ -57,7 +57,7 @@ app.post('/webhook', (req, res) => {
           {
             "type": "uri",
             "label": "ดู รูป",
-            "uri": "http://eduroam.skru.ac.th/assets/img/p1.jpg"
+            "uri": "http://eduroam.skru.ac.th/SKRU_Line_Bot/server/php/files/p1.jpg"
           }
       ]
   }
