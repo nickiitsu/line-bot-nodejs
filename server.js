@@ -41,8 +41,8 @@ app.post('/webhook', (req, res) => {
         text: 'โย่ว'
       };
   var  text2={
-        "type":"text",
-        "text":'เวรโอทีเดือนนี้'
+        type:'text',
+        text:'เวรโอทีเดือนนี้'
       };
     var text3=  {
     "type": "image",
@@ -56,33 +56,33 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
         text: 'โย่ว'
       };
   var  text2={
-        "type":"text",
-        "text":'เวร กศบป.เดือนนี้'
+        type:'text',
+        text:'เวร กศบป.เดือนนี้'
       };
     var text3=  {
    
-  "type": "template",
-  "altText": "this is a buttons template",
-  "template": {
-      "type": "buttons",
-      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
-      "title": "Menu",
-      "text": "Please select",
-      "actions": [
+  type: 'template',
+  altText: 'this is a buttons template',
+  template: {
+      type: 'buttons',
+      thumbnailImageUrl: 'https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg',
+      title: 'Menu',
+      text: 'Please select',
+      actions: [
           {
-            "type": "postback",
-            "label": "Buy",
-            "data": "action=buy&itemid=123"
+            type: 'postback',
+            label: 'Buy',
+            data: 'action=buy&itemid=123'
           },
           {
-            "type": "postback",
-            "label": "Add to cart",
-            "data": "action=add&itemid=123"
+            type: 'postback',
+            label: 'Add to cart',
+            data: 'action=add&itemid=123'
           },
           {
-            "type": "uri",
-            "label": "View detail",
-            "uri": "http://example.com/page/123"
+            type: 'uri',
+            label: 'View detail',
+            uri: 'http://example.com/page/123'
           }
       ]
   }
