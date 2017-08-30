@@ -57,7 +57,7 @@ app.post('/webhook', (req, res) => {
           {
             "type": "uri",
             "label": "ดู รูป",
-            "uri": "http://www.skru.ac.th"
+            "uri": "http://eduroam.skru.ac.th/assets/img/p1.jpg"
           }
       ]
   }
