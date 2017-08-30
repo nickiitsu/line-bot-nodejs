@@ -50,7 +50,8 @@ app.post('/webhook', (req, res) => {
   "template": {
       "type": "buttons",
       "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
-      "title": "เวรโอที",     
+      "title": "เวรโอที",  
+      "text": "ตรวจสอบตารางการปฏิบัติงานนอกเวลาราชการ วันจันทร์ - ศุกร์",
       "actions": [
           {
             "type": "uri",
