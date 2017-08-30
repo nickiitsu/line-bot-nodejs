@@ -50,7 +50,7 @@ app.post('/webhook', (req, res) => {
     "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
 };  
   }
-if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เวรวันหยุด') {
+if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เวรวันหยุด' || text === 'กศบป.') {
   var  text1={
         type: 'text',
         text: 'โย่ว'
