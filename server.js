@@ -38,7 +38,7 @@ app.post('/webhook', (req, res) => {
   if (text === 'เวรโอที'|| text === 'โอที'|| text === 'OT'|| text === 'ot'|| text === 'เวรวันปกติ') {
   var  text1={
         type: 'text',
-        text: 'โย่ว...'
+        text: 'โย่ว..'
       };
   var  text2={
         type:'text',
@@ -46,7 +46,7 @@ app.post('/webhook', (req, res) => {
       };
     var text3= {
   "type": "template",
-  "altText": "this is a buttons template",
+  "altText": "ตารางเวร OT",
   "template": {
       "type": "buttons",
       "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg",
