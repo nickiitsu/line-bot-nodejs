@@ -60,9 +60,34 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
         "text":'เวร กศบป.เดือนนี้'
       };
     var text3=  {
-    "type": "image",
-    "originalContentUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
-    "previewImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg"
+      {
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p2.jpg",
+      "title": "Menu",
+      "text": "Please select",
+      "actions": [
+          {
+            "type": "postback",
+            "label": "Buy",
+            "data": "action=buy&itemid=123"
+          },
+          {
+            "type": "postback",
+            "label": "Add to cart",
+            "data": "action=add&itemid=123"
+          },
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+          }
+      ]
+  }
+}
+ 
 }; 
   }  
  sendText(sender, text1,text2,text3)
