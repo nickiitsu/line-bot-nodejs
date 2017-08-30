@@ -57,7 +57,7 @@ app.post('/webhook', (req, res) => {
           {
             "type": "uri",
             "label": "ดู รูป",
-            "uri": "https://passport.skru.ac.th/evaluate/SKRU_Line_Bot/server/php/files/p1.jpg"
+            "uri": "http://www.skru.ac.th"
           }
       ]
   }
