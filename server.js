@@ -60,7 +60,7 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
         "text":'เวร กศบป.เดือนนี้'
       };
     var text3=  {
-      {
+   
   "type": "template",
   "altText": "this is a buttons template",
   "template": {
@@ -89,7 +89,7 @@ if (text === 'เวร กศบป'|| text === 'กศบป'|| text === 'เ�
 }
  
 
-  }  
+
  sendText(sender, text1,text2,text3)
   res.sendStatus(200)
 })
